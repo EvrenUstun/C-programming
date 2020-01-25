@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int binary_search(int dizi[],int uzunluk,int aranan)
+{
+    int alt=0;
+    int ust=uzunluk-1;
+    int orta=0;
+
+    while(alt<=ust)
+    {
+        orta=(alt+ust)/2;
+        if(dizi[orta]==aranan)
+        {
+            return orta;
+        }
+        else if(dizi[orta]>aranan)
+        {
+            ust=orta-1;
+        }
+        else
+        {
+            alt=orta+1;
+        }
+    }
+    return 0;
+}
+
+int main()
+{
+    int i;
+    int aranan=33;
+    int uzunluk=10;
+    int dizi[]= {10,14,19,26,27,31,33,35,42,44};
+    int aranan_indis=binary_search(dizi,uzunluk,aranan);
+    printf("Dizi:");
+    for( i=0 ; i<uzunluk ; i++)
+    {
+        printf("%d,",dizi[i]);
+    }
+    if(aranan_indis)
+    {
+        printf("\n\n %d sayisi: %d indisinde bulundu \n\n",aranan,aranan_indis);
+    }
+    else
+    {
+        printf("\n\n %d sayisi dizide bulunamadi.\n\n",aranan);
+    }
+    return 0;
+}
