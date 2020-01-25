@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int matris[3][3];
+    int transpose[3][3];
+    int satir=0,sutun=0;
+
+    printf("\n 3x3 luk matrisin elemanlarini giriniz.\n\n");
+
+    for(satir=0 ; satir<3 ; satir++)
+    {
+        for(sutun=0 ; sutun<3 ; sutun++)
+        {
+            printf("Matrisin [%d][%d] elemanini giriniz:",satir+1,sutun+1);
+            scanf("%d",&matris[satir][sutun]);
+            transpose[sutun][satir]=matris[satir][sutun];
+        }
+    }
+    printf("\n Matris \t ve \t Transpozu\n");
+
+    for(satir=0 ; satir<3 ; satir++)
+    {
+        printf("\n");
+        for(sutun=0 ; sutun<3 ; sutun++)
+        {
+            printf("%d ",matris[satir][sutun]);
+        }
+        printf("\t\t\t");
+        for(sutun=0 ; sutun<3 ; sutun++)
+        {
+            printf("%d ",transpose[satir][sutun]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
